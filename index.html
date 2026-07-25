@@ -635,8 +635,8 @@ I know you may not be the type of person who gets emotional easily.<br>
 
 Maybe you will read this and simply smile.<br>
 Maybe you will make fun of me for writing so much. 😄<br>
-
-We have laughed together.<br>
+But,<br>
+We have laughed together.
 We have spent time together.<br>
 We have had good moments… and maybe a few not-so-good moments too. 😄<br>
 
@@ -645,12 +645,8 @@ you became a special part of my life.<br>
 
 And honestly…<br>
 
-Sometimes we don't realize the value of a person<br>
+Sometimes we don't realize the value of a person,
 until life starts taking everyone in different directions.<br>
-
-**ಒಬ್ಬ ವ್ಯಕ್ತಿ ನಮ್ಮ ಜೀವನದಲ್ಲಿ ಎಷ್ಟು ಮುಖ್ಯ ಅನ್ನೋದು,<br>
-ಅವರು ನಮ್ಮ ಜೊತೆ ಇದ್ದಾಗ ಯಾವಾಗಲೂ ಗೊತ್ತಾಗುವುದಿಲ್ಲ...<br>
-ಅವರು ನಮ್ಮಿಂದ ದೂರ ಹೋಗುವ ಸಮಯ ಬಂದಾಗ ಮಾತ್ರ ಗೊತ್ತಾಗುತ್ತದೆ.** 💙<br>
 
 Maybe our lives will change.<br>
 
@@ -661,7 +657,7 @@ Maybe we will meet new people and create new memories.<br>
 But I hope that, somewhere in your heart,<br>
 there will always be a small place for the memories we created together.<br>
 
-Because Trust that our friendship not for a time pass. <br>
+And I Trust that our friendship is not for a time pass. <br>
 
 It is a collection of small moments<br>
 that I will remember for a very long time.<br>
@@ -686,7 +682,7 @@ if you ever look back at these days,<br>
 
 I hope you smile and think…<br>
 
-**"ಹೌದು... ಆ ಸಮಯ ಚೆನ್ನಾಗಿತ್ತು, & You think that He is not best but is just my friend."** 💙<br>
+**"ಹೌದು... ಆ ಸಮಯ ಚೆನ್ನಾಗಿತ್ತು, & You think that He is not best but he is also just my friend."** 💙<br>
 
 And if you ever need me,<br>
 even after years,<br>
@@ -694,22 +690,24 @@ even after everything changes…<br>
 
 Just remember this:<br>
 
-**ನಾನು ಯಾವಾಗಲೂ ನಿನ್ನ friend ಆಗಿರ್ತೀನಿ.** 🤝💙<br>
+**I'm always with you....** 🤝💙<br>
 
 Not because I expect anything from you.<br>
 
 Not because you have to do anything for me.<br>
 
 And I trust that you will never break my trust in anything......<br>
+ ನನಗೊಂದು ಮಾತು ಕೊಡು <br>
+            ಅದೆಷ್ಟೇ ಕೋಪ ಬಂದ್ರು, ಅದೆಷ್ಟೇ ಜಗಳ ಮಾಡಿದ್ರು, ಅದೆಷ್ಟೇ MISS UNDERSTANDING ಆದ್ರು, ನನ್ನ  ಬಿಟ್ಟು  ಹೋಗಲ್ಲ ಅಂತ.....<br>
 
-So no.....<br>
+            So no.....<br>
 
 This is not goodbye.<br>
 
 **ಇದು goodbye ಅಲ್ಲ...<br>
-  We just starting that new story of Us...** 📖✨<br>
+ I think that We just move the same bond forever ♾️ and I trust that you will never break 💔 this bond 🤞..** 📖✨<br>
 
-Take care of yourself.<br>
+Take care of yourself 🥰 & Keep smiling 😊😁.<br>
 Be happy.<br>
 Achieve everything you dream of & I'm always here for you to support for ur dreams.<br>
 
@@ -738,7 +736,7 @@ Just remember this one thing:<br>
 
 With lots of friendship,<br>
 
-**Urs Jeevuu** 🫂<br>
+**yours Jeevuu** 🫂<br>
 
 ✨ One friendship.<br>
 💙 Countless memories.<br>
@@ -875,6 +873,12 @@ const questions = [
     {
         type:"text",
         title:"How much do you really know about me?",
+        option:[
+            A. 100% — I can read you like a book 📖
+            B. 75% — I know you pretty well 😌
+            C. 50% — You’re still full of surprises 👀
+            D. 25% — I like to spend more time with you to know you more❤️
+            ]
         placeholder:"Tell me what you know about me in 20–50 words or more..."
     },
 
@@ -888,6 +892,12 @@ const questions = [
         type:"text",
         title:"Just tell that what you feel about me? remeber You need not lie bcz today is your birthday so i need to know the truth about me from you.",
         placeholder:"Write your honest answer in 20–50 words or more..."
+    },
+
+    {
+        type:"text",
+        title:"What's your favorite memory with me?"
+        placeholder:"Write your honest answer in 10–20 words or more..."
     }
 
 ];
@@ -966,7 +976,7 @@ function renderQuestion(){
 
         counter.style.margin = "10px 0";
 
-        counter.textContent = "Minimum 30 words required";
+        counter.textContent = "Minimum 35 words required";
 
         area.appendChild(counter);
 
@@ -1193,6 +1203,7 @@ async function sendAnswers(){
         question4: answers[3] || "",
         question5: answers[4] || "",
         question6: answers[5] || "",
+        question7: answers[6] || "",
 
         selectedPhotoNumber: selectedPhoto + 1,
 
