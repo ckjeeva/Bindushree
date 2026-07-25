@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Surprise For BINDUSHREE❤️(PANDA) ✨</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+    --bg:#080611;
+    --pink:#ff5c9a;
+    --purple:#8067ff;
+    --gold:#ffd166;
+    --white:#fff;
+    --muted:#c4bdca;
+}
+
+body{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at 10% 10%,rgba(255,60,145,.2),transparent 30%),
+        radial-gradient(circle at 90% 20%,rgba(93,75,255,.2),transparent 32%),
+        var(--bg);
+    color:var(--white);
+    font-family:Segoe UI,Arial,sans-serif;
+    overflow-x:hidden;
+}
+
+.screen{
+    display:none;
+    min-height:100vh;
+    padding:30px 18px;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.screen.active{
+    display:flex;
+    animation:enter .7s ease both;
+}
+
+@keyframes enter{
+    from{opacity:0;transform:translateY(20px) scale(.98)}
+    to{opacity:1;transform:none}
+}
+
+h1{
+    font-family:Georgia,serif;
+    font-size:clamp(20px,6vw,30px);
+    line-height:1.1;
+    margin:18px 0;
+}
+
+h2{font-family:Georgia,serif}
+
+p{
+    color:var(--muted);
+    line-height:1.75;
+}
+
+.small{
+    color:#ff9bc5;
+    letter-spacing:4px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.card{
+    width:min(850px,100%);
+    padding:42px 28px;
+    border-radius:30px;
+    background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.035));
+    border:1px solid rgba(255,255,255,.16);
+    backdrop-filter:blur(20px);
+    box-shadow:0 25px 80px rgba(0,0,0,.45);
+}
+
+button{
+    border:0;
+    border-radius:999px;
+    padding:15px 24px;
+    color:#fff;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    background:linear-gradient(135deg,var(--pink),var(--purple));
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-4px);
+    filter:brightness(1.1);
+}
+
+input,textarea{
+    width:100%;
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:15px;
+    background:rgba(0,0,0,.25);
+    color:#fff;
+    padding:16px;
+    font:inherit;
+    outline:none;
+}
+
+textarea{
+    min-height:180px;
+    resize:vertical;
+}
+
+input:focus,textarea:focus{
+    border-color:var(--pink);
+    box-shadow:0 0 0 4px rgba(255,92,154,.12);
+}
+
+.lock{
+    font-size:70px;
+    margin-bottom:15px;
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    50%{transform:translateY(-14px)}
+}
+
+.password-card{width:min(480px,100%)}
+
+.password-card input{
+    margin:22px 0 10px;
+    text-align:center;
+    letter-spacing:3px;
+}
+
+#error{
+    min-height:25px;
+    color:#ff9ab6;
+}
+
+.cinema-name{
+    font-size:clamp(10px,10vw,100px);
+    background:linear-gradient(90deg,#ff73b4,#ffd166,#9b88ff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.line{
+    width:150px;
+    height:1px;
+    margin:25px auto;
+    background:linear-gradient(90deg,transparent,var(--pink),transparent);
+}
+
+
+.options{
+    display:grid;
+    gap:14px;
+    margin-top:25px;
+}
+
+.option{
+    width:100%;
+    text-align:left;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:none;
+}
+
+.option:hover{
+    background:rgba(255,92,154,.18);
+    border-color:#ff9bc5;
+}
+
+.question-count{
+    margin-top:10px;
+    color:#ff9bc5;
+    font-weight:bold;
+}
+
+.photo-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
+    margin:28px 0;
+}
+
+.photo-option{
+    position:relative;
+    aspect-ratio:1;
+    border-radius:18px;
+    overflow:hidden;
+    border:3px solid transparent;
+    cursor:pointer;
+    background:#191526;
+    transition:.3s;
+}
+
+.photo-option:hover{
+    transform:translateY(-5px);
+}
+
+.photo-option.selected{
+    border-color:#ffd166;
+    box-shadow:0 0 25px rgba(255,209,102,.5);
+}
+
+.photo-option img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.photo-number{
+    position:absolute;
+    left:8px;
+    top:8px;
+    background:rgba(0,0,0,.65);
+    border-radius:999px;
+    padding:4px 9px;
+    font-size:12px;
+}
+
+#photoError{
+    color:#ff9ab6;
+    min-height:25px;
+}
+
+.balloons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin:45px 0;
+}
+
+.balloon{
+    width:95px;
+    height:120px;
+    border-radius:50% 50% 48% 48%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:65px;
+    cursor:pointer;
+    transition:.4s;
+    animation:float 3s ease-in-out infinite;
+}
+
+.balloon:hover{
+    transform:translateY(-15px) scale(1.08);
+}
+
+.balloon.burst{
+    animation:burst .5s forwards;
+}
+
+@keyframes burst{
+    to{transform:scale(1.8);opacity:0}
+}
+
+.b1{background:linear-gradient(135deg,#ff4e91,#c92c6f)}
+.b2{background:linear-gradient(135deg,#7d62ff,#4d3bc2)}
+.b3{background:linear-gradient(135deg,#ffd166,#ee9c20)}
+.b4{background:linear-gradient(135deg,#48dcd0,#169d99)}
+.b5{background:linear-gradient(135deg,#ff8b5c,#d84738)}
+
+.wish{
+    min-height:130px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+    border-radius:22px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    font-size:18px;
+}
+
+.cake{
+    font-size:100px;
+    margin:20px;
+}
+
+.candle{
+    font-size:80px;
+    cursor:pointer;
+    display:inline-block;
+    transition:.3s;
+}
+
+.candle:hover{
+    transform:scale(1.1);
+}
+
+.final-message{
+    max-width:650px;
+    margin:20px auto;
+    font-size:17px;
+}
+
+.confetti{
+    position:fixed;
+    top:-30px;
+    z-index:9999;
+    pointer-events:none;
+    font-size:24px;
+    animation:fall 3s linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
+
+/* ============================================================
+   FULLSCREEN PHOTO VIEWER
+============================================================ */
+
+.photo-lightbox{
+    position:fixed;
+    inset:0;
+    z-index:10000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:rgba(0,0,0,.94);
+    backdrop-filter:blur(12px);
+}
+
+.photo-lightbox.active{
+    display:flex;
+    animation:lightboxFade .25s ease;
+}
+
+@keyframes lightboxFade{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+.photo-lightbox img{
+    max-width:95vw;
+    max-height:90vh;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    border-radius:16px;
+    box-shadow:0 0 50px rgba(255,255,255,.25);
+    animation:photoZoom .3s ease;
+}
+
+@keyframes photoZoom{
+    from{
+        transform:scale(.8);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.lightbox-close{
+    position:absolute;
+    top:18px;
+    right:20px;
+    width:50px;
+    height:50px;
+    padding:0;
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.3);
+    font-size:28px;
+    line-height:50px;
+    z-index:2;
+}
+
+.lightbox-close:hover{
+    background:rgba(255,92,154,.4);
+    transform:scale(1.08);
+}
+
+.lightbox-hint{
+    position:absolute;
+    bottom:18px;
+    left:50%;
+    transform:translateX(-50%);
+    color:rgba(255,255,255,.7);
+    font-size:13px;
+    text-align:center;
+}
+
+
+/* MOBILE PHOTO VIEWER */
+
+@media(max-width:500px){
+
+    .photo-lightbox{
+        padding:10px;
+    }
+
+    .photo-lightbox img{
+        max-width:96vw;
+        max-height:82vh;
+        border-radius:12px;
+    }
+
+    .lightbox-close{
+        top:12px;
+        right:12px;
+        width:44px;
+        height:44px;
+        line-height:44px;
+        font-size:24px;
+    }
+
+    .lightbox-hint{
+        bottom:10px;
+        font-size:11px;
+    }
+
+}
+
+@media(max-width:800px){
+    .photo-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+@media(max-width:500px){
+    .photo-grid{grid-template-columns:repeat(2,1fr)}
+    .balloon{
+        width:72px;
+        height:95px;
+        font-size:48px;
+    }
+    .card{padding:35px 18px}
+    button{width:100%}
+}
+</style>
+</head>
+
+<body>
+
+    <!-- FULLSCREEN PHOTO VIEWER -->
+
+<div
+    id="photoLightbox"
+    class="photo-lightbox"
+    onclick="closePhoto(event)"
+>
+
+    <button
+        class="lightbox-close"
+        onclick="closePhoto(event)"
+    >
+        ×
+    </button>
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt="Selected Memory"
+    >
+
+    <div class="lightbox-hint">
+        Tap outside the photo or × to close
+    </div>
+
+</div>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="backgroundMusic" loop preload="auto">
+    <source src="friendship-song.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- PASSWORD -->
+<section id="password" class="screen active">
+    <div class="card password-card">
+        <div class="lock">🔒</div>
+        <div class="small">A PRIVATE SURPRISE</div>
+        <h1>This Surprise Is Locked</h1>
+        <p>Only one special person can open this surprise...</p>
+
+        <input
+            id="passwordInput"
+            type="password"
+            placeholder="Enter secret password"
+            autocomplete="off"
+        >
+
+        <div id="error"></div>
+
+        <button onclick="checkPassword()">🔓 Open Surprise</button>
+
+        <p style="margin-top:18px;font-size:13px">
+            Hint: YOUR NICKNAME 😉
+        </p>
+    </div>
+</section>
+
+<!-- WELCOME -->
+<section id="welcome" class="screen">
+    <div class="card">
+        <div class="small">A PERSONAL STORY</div>
+        <div class="line"></div>
+
+        <p>STARRING</p>
+        <h1 class="cinema-name">BINDUSHREE❤️</h1>
+
+        <p>
+            This is a small surprise from a friend who truly values your friendship.
+        </p>
+
+        <div class="line"></div>
+
+        <button onclick="show('game')">
+            🎬 Begin The Surprise
+        </button>
+    </div>
+</section>
+
+<!-- QUESTIONS -->
+<section id="game" class="screen">
+    <div class="card">
+        <div class="small">FRIENDSHIP GAME</div>
+        <h1 id="questionTitle"></h1>
+        <div id="questionArea"></div>
+        <div class="question-count" id="questionCount"></div>
+    </div>
+</section>
+
+<!-- PHOTOS -->
+<section id="photos" class="screen">
+    <div class="card">
+        <div class="small">A SMALL MEMORY CHOICE</div>
+
+        <h1>Which Photo Do You Like Most? 📸</h1>
+
+        <p>
+            These photos are already selected for you.
+            Just choose the one you like most.
+        </p>
+
+        <div class="photo-grid" id="photoGrid"></div>
+
+        <div id="photoError"></div>
+
+        <button onclick="sendAnswers()">
+            💌 Send My Answers
+        </button>
+
+        <div id="sendStatus" style="margin-top:15px"></div>
+
+        <p style="margin-top:10px;font-size:12px">
+            Answers are sent to Jeevan 💙
+        </p>
+    </div>
+</section>
+
+<!-- BALLOONS -->
+<section id="balloons" class="screen">
+    <div class="card">
+        <div class="small">FIVE WISHES FOR YOUR NEW JOURNEY</div>
+
+        <h1>Choose A Balloon 🎈</h1>
+
+        <p>
+            Tap every balloon. Each one has a special wish for you.
+        </p>
+
+        <div class="balloons">
+            <div class="balloon b1" onclick="openWish(0,this)">🎈</div>
+            <div class="balloon b2" onclick="openWish(1,this)">🎈</div>
+            <div class="balloon b3" onclick="openWish(2,this)">🎈</div>
+            <div class="balloon b4" onclick="openWish(3,this)">🎈</div>
+            <div class="balloon b5" onclick="openWish(4,this)">🎈</div>
+        </div>
+
+        <div id="wish" class="wish">
+            Tap a balloon to reveal a wish 💙
+        </div>
+
+        <button
+            id="toCake"
+            style="display:none;margin-top:25px"
+            onclick="show('cake')"
+        >
+            🎂 Continue
+        </button>
+    </div>
+</section>
+
+<!-- CAKE -->
+<section id="cake" class="screen">
+    <div class="card">
+        <div class="small">ONE LAST LITTLE SURPRISE</div>
+
+        <h1>Make A Wish 🎂</h1>
+
+        <div class="cake">🎂</div>
+
+        <p>
+            Tap the candle flame to blow out the candle and make a wish.
+        </p>
+
+        <div class="candle" onclick="blowCandle()">🕯️</div>
+
+        <div id="cakeStatus" style="margin-top:20px"></div>
+    </div>
+</section>
+
+<!-- FINAL -->
+<section id="final" class="screen">
+    <div class="card">
+        <div class="small">FROM JEEVAN</div>
+
+        <h1>A New Chapter 💙</h1>
+
+        <p class="final-message">
+            Dear BINDUSHREE ❤️(PANDA) 💙,<br><br>
+            28/07/2006 <br><br>
+
+I know you may not be the type of person who gets emotional easily.<br>
+
+Maybe you will read this and simply smile.<br>
+Maybe you will make fun of me for writing so much. 😄<br>
+
+We have laughed together.<br>
+We have spent time together.<br>
+We have had good moments… and maybe a few not-so-good moments too. 😄<br>
+
+But somewhere between all those ordinary days,<br>
+you became a special part of my life.<br>
+
+And honestly…<br>
+
+Sometimes we don't realize the value of a person<br>
+until life starts taking everyone in different directions.<br>
+
+**ಒಬ್ಬ ವ್ಯಕ್ತಿ ನಮ್ಮ ಜೀವನದಲ್ಲಿ ಎಷ್ಟು ಮುಖ್ಯ ಅನ್ನೋದು,<br>
+ಅವರು ನಮ್ಮ ಜೊತೆ ಇದ್ದಾಗ ಯಾವಾಗಲೂ ಗೊತ್ತಾಗುವುದಿಲ್ಲ...<br>
+ಅವರು ನಮ್ಮಿಂದ ದೂರ ಹೋಗುವ ಸಮಯ ಬಂದಾಗ ಮಾತ್ರ ಗೊತ್ತಾಗುತ್ತದೆ.** 💙<br>
+
+Maybe our lives will change.<br>
+
+Maybe we won't talk every day like we do now.<br>
+Maybe we will become busy.<br>
+Maybe we will meet new people and create new memories.<br>
+
+But I hope that, somewhere in your heart,<br>
+there will always be a small place for the memories we created together.<br>
+
+Because Trust that our friendship not for a time pass. <br>
+
+It is a collection of small moments<br>
+that I will remember for a very long time.<br>
+
+The random conversations.<br>
+The stupid jokes.<br>
+The laughter.<br>
+The arguments.<br>
+The moments where we did absolutely nothing<br>
+but still enjoyed being together. 😄<br>
+
+**ಕೆಲವು ಸಂಬಂಧಗಳಿಗೆ ಹೆಸರು ಬೇಕಾಗಿಲ್ಲ...<br>
+ಅವು ನಮ್ಮ ಜೀವನದಲ್ಲಿ ಕೊಟ್ಟಿರುವ ನೆನಪುಗಳೇ ಸಾಕು.** ✨<br>
+
+I don't know what the future has planned for us.<br>
+
+But I do know this…<br>
+
+No matter where life takes us,<br>
+no matter how much time passes,<br>
+if you ever look back at these days,<br>
+
+I hope you smile and think…<br>
+
+**"ಹೌದು... ಆ ಸಮಯ ಚೆನ್ನಾಗಿತ್ತು, & You think that He is not best but is just my friend."** 💙<br>
+
+And if you ever need me,<br>
+even after years,<br>
+even after everything changes…<br>
+
+Just remember this:<br>
+
+**ನಾನು ಯಾವಾಗಲೂ ನಿನ್ನ friend ಆಗಿರ್ತೀನಿ.** 🤝💙<br>
+
+Not because I expect anything from you.<br>
+
+Not because you have to do anything for me.<br>
+
+And I trust that you will never break my trust in anything......<br>
+
+So no.....<br>
+
+This is not goodbye.<br>
+
+**ಇದು goodbye ಅಲ್ಲ...<br>
+  We just starting that new story of Us...** 📖✨<br>
+
+Take care of yourself.<br>
+Be happy.<br>
+Achieve everything you dream of & I'm always here for you to support for ur dreams.<br>
+
+And whenever life gets difficult,<br>
+remember that somewhere in this world,<br>
+there is one friend who genuinely wishes the best for you.<br>
+
+**Thank you, BINDU❤️.**<br>
+
+For being a part of my life.<br>
+
+For the memories.<br>
+
+For the laughter.<br>
+
+For simply being you.<br>
+
+And if one day you forget everything else from this surprise…<br>
+
+Just remember this one thing:<br>
+
+**ನೀನು ನನಗೆ ಎಷ್ಟು important ಅಂತ ನಾನು ಯಾವತ್ತೂ ಸರಿಯಾಗಿ ಹೇಳದೇ ಇರಬಹುದು...<br>
+ಆದರೆ ನೀನು ನನಗೆ important ಆಗಿದ್ದೆ...<br>
+ಇದ್ದೀಯ...
+ಮತ್ತು ಯಾವತ್ತೂ ಇರುತ್ತೀಯ.** 💙<br>
+
+With lots of friendship,<br>
+
+**Urs Jeevuu** 🫂<br>
+
+✨ One friendship.<br>
+💙 Countless memories.<br>
+🌟 And a story that will always be special.<br>
+
+**This is not the end...**<br>
+
+**ಇನ್ನೂ ತುಂಬಾ memories create ಮಾಡೋದು ಬಾಕಿ ಇದೆ And I trust that you will always be with me for that & Never leave me..** 😊💙<br>
+
+        </p>
+
+        <h2>Jeevan C N</h2>
+
+        <button onclick="celebrate()">
+            🎉 Celebrate Again
+        </button>
+    </div>
+</section>
+
+<script>
+
+/* ============================================================
+   SETTINGS
+============================================================ */
+
+// Change this password whenever you want.
+// The check below is case-insensitive.
+const CORRECT_PASSWORD = "PANDA";
+
+
+/* ============================================================
+   PASSWORD
+============================================================ */
+
+function checkPassword(){
+
+    const input = document.getElementById("passwordInput");
+    const error = document.getElementById("error");
+
+    const enteredPassword = input.value.trim().toUpperCase();
+
+    if(enteredPassword === CORRECT_PASSWORD){
+
+        error.textContent = "Unlocked ✨";
+
+        // Start the music immediately after the user clicks Open Surprise.
+        // Because this happens inside the password button click, browsers allow playback.
+        const music = document.getElementById("backgroundMusic");
+
+        music.volume = 0.7;
+
+        music.play().catch(error => {
+            console.log("Music could not start:", error);
+        });
+
+        setTimeout(() => {
+            show("welcome");
+        }, 600);
+
+    }else{
+
+        error.textContent = "Wrong password 😄 Try again.";
+
+        input.value = "";
+        input.focus();
+    }
+}
+
+
+// Press Enter to unlock
+document
+    .getElementById("passwordInput")
+    .addEventListener("keydown", function(event){
+
+        if(event.key === "Enter"){
+            checkPassword();
+        }
+
+    });
+
+
+/* ============================================================
+   SCREEN NAVIGATION
+============================================================ */
+
+function show(id){
+
+    document
+        .querySelectorAll(".screen")
+        .forEach(screen => screen.classList.remove("active"));
+
+    document
+        .getElementById(id)
+        .classList.add("active");
+
+    window.scrollTo(0,0);
+}
+
+
+/* ============================================================
+   QUESTIONS
+============================================================ */
+
+const questions = [
+
+    {
+        type:"choice",
+        title:"How was our friendship started?",
+        options:[
+            "We met through college or studies 📚",
+            "We met through common friends 🤝",
+            "We started talking unexpectedly 😄",
+            "I honestly don't remember exactly 😂"
+        ]
+    },
+
+    {
+        type:"text",
+        title:"What do you feel about me? What should I really change, and what should I never change?",
+        placeholder:"Write honestly in 20–50 words or more..."
+    },
+
+    {
+        type:"choice",
+        title:"Are you really happy with me, or are you sometimes forcefully staying with me?",
+        options:[
+            "I am genuinely happy with you 💙",
+            "Mostly happy, but sometimes annoyed 😄",
+            "I stay because our friendship matters to me 🤝",
+            "I will answer honestly in my own words"
+        ]
+    },
+
+    {
+        type:"text",
+        title:"How much do you really know about me?",
+        placeholder:"Tell me what you know about me in 20–50 words or more..."
+    },
+
+    {
+        type:"text",
+        title:"What am I really to you? And what is one thing you have never told me until now, but you allow me to do?",
+        placeholder:"Write your honest answer in 20–50 words or more..."
+    },
+
+    { 
+        type:"text",
+        title:"Just tell that what you feel about me? remeber i need not lie bcz today is your birthday so i need to know the truth about me from you.",
+        placeholder:"Write your honest answer in 20–50 words or more..."
+    }
+
+];
+
+let answers = [];
+let currentQuestion = 0;
+
+function countWords(text){
+
+    return text.trim()
+        ? text.trim().split(/\s+/).length
+        : 0;
+}
+
+
+function renderQuestion(){
+
+    const question = questions[currentQuestion];
+
+    document.getElementById("questionTitle").textContent =
+        question.title;
+
+    document.getElementById("questionCount").textContent =
+        `Question ${currentQuestion + 1} of ${questions.length}`;
+
+    const area = document.getElementById("questionArea");
+
+    area.innerHTML = "";
+
+
+    if(question.type === "choice"){
+
+        const options = document.createElement("div");
+
+        options.className = "options";
+
+        question.options.forEach(optionText => {
+
+            const button = document.createElement("button");
+
+            button.className = "option";
+
+            button.textContent = optionText;
+
+            button.onclick = () => {
+
+                answers[currentQuestion] = optionText;
+
+                nextQuestion();
+
+            };
+
+            options.appendChild(button);
+
+        });
+
+        area.appendChild(options);
+
+    }
+
+
+    else{
+
+        const textarea = document.createElement("textarea");
+
+        textarea.id = "answerText";
+
+        textarea.placeholder = question.placeholder;
+
+        area.appendChild(textarea);
+
+
+        const counter = document.createElement("p");
+
+        counter.id = "wordCounter";
+
+        counter.style.margin = "10px 0";
+
+        counter.textContent = "Minimum 30 words required";
+
+        area.appendChild(counter);
+
+
+        textarea.addEventListener("input", () => {
+
+            const words = countWords(textarea.value);
+
+            counter.textContent =
+                `${words} words — minimum 20 words required`;
+
+            counter.style.color =
+                words >= 20 ? "#63e6be" : "#ff9ab6";
+
+        });
+
+
+        const nextButton = document.createElement("button");
+
+        nextButton.textContent = "Continue →";
+
+        nextButton.onclick = submitTextAnswer;
+
+        area.appendChild(nextButton);
+
+    }
+
+}
+
+
+function submitTextAnswer(){
+
+    const textarea = document.getElementById("answerText");
+
+    const value = textarea.value.trim();
+
+    const words = countWords(value);
+
+    if(words < 20){
+
+        alert(
+            `Please write at least 20 words. You have written ${words} words.`
+        );
+
+        textarea.focus();
+
+        return;
+    }
+
+    answers[currentQuestion] = value;
+
+    nextQuestion();
+}
+
+
+function nextQuestion(){
+
+    currentQuestion++;
+
+    if(currentQuestion >= questions.length){
+
+        buildPhotos();
+
+        show("photos");
+
+    }else{
+
+        renderQuestion();
+
+    }
+
+}
+
+
+/* ============================================================
+   PHOTOS
+============================================================ */
+
+const photos = [
+
+    "1.jpeg",
+    "2.jpeg",
+    "3.jpeg",
+    "4.jpeg",
+    "5.jpeg",
+    "6.jpeg",
+    "7.jpeg",
+    "8.jpeg",
+    "9.jpeg",
+    "10.jpeg"
+
+];
+
+let selectedPhoto = null;
+
+
+function buildPhotos(){
+
+    const grid = document.getElementById("photoGrid");
+
+    grid.innerHTML = "";
+
+    photos.forEach((url,index) => {
+
+        const item = document.createElement("div");
+
+        item.className = "photo-option";
+
+        item.innerHTML = `
+            <img src="${url}" alt="Memory ${index + 1}">
+            <span class="photo-number">${index + 1}</span>
+        `;
+
+        item.onclick = () => {
+
+    selectedPhoto = index;
+
+    document
+        .querySelectorAll(".photo-option")
+        .forEach(photo => photo.classList.remove("selected"));
+
+    item.classList.add("selected");
+
+    document.getElementById("photoError").textContent = "";
+
+    // Open the photo in large fullscreen view
+    openPhoto(url);
+
+};
+
+        grid.appendChild(item);
+
+    });
+
+}
+
+/* ============================================================
+   FULLSCREEN PHOTO VIEWER
+============================================================ */
+
+function openPhoto(url){
+
+    const lightbox =
+        document.getElementById("photoLightbox");
+
+    const image =
+        document.getElementById("lightboxImage");
+
+    image.src = url;
+
+    lightbox.classList.add("active");
+
+    // Prevent background scrolling
+    document.body.style.overflow = "hidden";
+
+}
+
+
+function closePhoto(event){
+
+    // Close when clicking outside the image
+    // or clicking the close button
+
+    if(
+
+        event.target.id === "photoLightbox" ||
+
+        event.target.classList.contains("lightbox-close")
+
+    ){
+
+        document
+            .getElementById("photoLightbox")
+            .classList.remove("active");
+
+        document.body.style.overflow = "";
+
+    }
+
+}
+
+
+// Press Escape to close the photo
+
+document.addEventListener("keydown", function(event){
+
+    if(event.key === "Escape"){
+
+        document
+            .getElementById("photoLightbox")
+            .classList.remove("active");
+
+        document.body.style.overflow = "";
+
+    }
+
+});
+
+/* ============================================================
+   SEND ANSWERS
+============================================================ */
+
+async function sendAnswers(){
+
+    if(selectedPhoto === null){
+
+        document.getElementById("photoError").textContent =
+            "Please select one photo first 📸";
+
+        return;
+    }
+
+    const status = document.getElementById("sendStatus");
+
+    status.textContent = "Sending your answers... 💌";
+
+    const GOOGLE_SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycby2ba7dPT_VEj5VCvkE6yo0dBV14BkZpAWBaUOX9v8gORMjT_1-R_zbjkHWfqzrID1J/exec";
+    const data = {
+
+        question1: answers[0] || "",
+        question2: answers[1] || "",
+        question3: answers[2] || "",
+        question4: answers[3] || "",
+        question5: answers[4] || "",
+        question6: answers[5] || "",
+
+        selectedPhotoNumber: selectedPhoto + 1,
+
+        selectedPhotoUrl: photos[selectedPhoto],
+
+        submittedAt: new Date().toLocaleString()
+
+    };
+
+
+    console.log("Sending data:", data);
+
+
+    try{
+
+        await fetch(
+
+            GOOGLE_SCRIPT_URL,
+
+            {
+                method: "POST",
+                mode: "no-cors",
+
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8"
+                },
+
+                body: JSON.stringify(data)
+
+            }
+
+        );
+
+
+        status.textContent =
+            "Answers sent successfully 💙";
+
+
+        setTimeout(() => {
+
+            show("balloons");
+
+        }, 1500);
+
+    }
+
+
+    catch(error){
+
+        console.error("Error:", error);
+
+        status.textContent =
+            "Something went wrong. Please try again.";
+
+    }
+
+}
+
+
+
+/* ============================================================
+   BALLOONS
+============================================================ */
+
+const wishes = [
+
+    "✨ May your new journey be filled with happiness, success and beautiful opportunities.",
+
+    "🚀 May you always have the courage to chase your dreams, even when the path becomes difficult.",
+
+    "💙 Give a time for a people who truly care & loves you & make there busy time for you.",
+
+    "🌟 May every challenge you face make you stronger, wiser and more confident, And Be loyal for who loyal for you. ",
+
+    "🙏 My biggest wish for you is simple — may you always be happy and proud of the person you become."
+
+];
+
+let openedBalloons = 0;
+
+
+function openWish(index, element){
+
+    if(element.classList.contains("burst")){
+
+        return;
+
+    }
+
+    element.classList.add("burst");
+
+    document.getElementById("wish").textContent =
+        wishes[index];
+
+    openedBalloons++;
+
+    if(openedBalloons === 5){
+
+        document.getElementById("toCake").style.display =
+            "inline-block";
+
+    }
+
+}
+
+
+/* ============================================================
+   CAKE
+============================================================ */
+
+function blowCandle(){
+
+    document.getElementById("cakeStatus").textContent =
+        "Wish made! ✨🎉";
+
+    setTimeout(() => {
+
+        show("final");
+
+    }, 1200);
+
+}
+
+
+/* ============================================================
+   CONFETTI
+============================================================ */
+
+function celebrate(){
+
+    const symbols = [
+        "✨","🎉","💙","🌟","🎊","💫","🥳","⭐"
+    ];
+
+    for(let i = 0; i < 70; i++){
+
+        const confetti = document.createElement("div");
+
+        confetti.className = "confetti";
+
+        confetti.textContent =
+            symbols[Math.floor(Math.random() * symbols.length)];
+
+        confetti.style.left =
+            Math.random() * 100 + "%";
+
+        confetti.style.animationDuration =
+            (Math.random() * 2 + 2) + "s";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+
+            confetti.remove();
+
+        }, 5000);
+
+    }
+
+}
+
+
+/* ============================================================
+   START
+============================================================ */
+
+renderQuestion();
+
+</script>
+
+</body>
+</html>
