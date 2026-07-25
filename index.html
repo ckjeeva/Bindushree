@@ -841,6 +841,7 @@ function show(id){
 ============================================================ */
 
 const questions = [
+const questions = [
 
     {
         type:"choice",
@@ -871,15 +872,14 @@ const questions = [
     },
 
     {
-        type:"text",
+        type:"choice",
         title:"How much do you really know about me?",
-        option:[
-            A. 100% — I can read you like a book 📖
-            B. 75% — I know you pretty well 😌
-            C. 50% — You’re still full of surprises 👀
-            D. 25% — I like to spend more time with you to know you more❤️
-            ]
-        placeholder:"Tell me what you know about me in 20–50 words or more..."
+        options:[
+            "100% — I can read you like a book 📖",
+            "75% — I know you pretty well 😌",
+            "50% — You're still full of surprises 👀",
+            "25% — I want to spend more time with you to know you more ❤️"
+        ]
     },
 
     {
@@ -888,20 +888,19 @@ const questions = [
         placeholder:"Write your honest answer in 20–50 words or more..."
     },
 
-    { 
+    {
         type:"text",
-        title:"Just tell that what you feel about me? remeber You need not lie bcz today is your birthday so i need to know the truth about me from you.",
+        title:"Just tell me what you feel about me. Remember, you need not lie because today is your birthday, so I need to know the truth about me from you.",
         placeholder:"Write your honest answer in 20–50 words or more..."
     },
 
     {
         type:"text",
-        title:"What's your favorite memory with me?"
+        title:"What's your favorite memory with me?",
         placeholder:"Write your honest answer in 10–20 words or more..."
     }
 
 ];
-
 let answers = [];
 let currentQuestion = 0;
 
