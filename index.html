@@ -821,14 +821,15 @@ Never leave this friendship. 😊💙
 <script>
 // Set unlock date and time
 const now = new Date();
+
 // ============================================================
-// REAL-TIME COUNTDOWN — 10:00 AM TO 11:00 AM
+// BIRTHDAY COUNTDOWN
+// Opens exactly on 28 July 2026 at 12:00:00 AM
 // ============================================================
 
-const unlockDate = new Date();
+const unlockDate = new Date(2026, 6, 28, 0, 0, 0);
 
-// Today at 11:00:00 AM
-unlockDate.setHours(11, 0, 0, 0);
+function startCountdown() {
 
 function startCountdown() {
 
@@ -839,27 +840,28 @@ function startCountdown() {
         const now = new Date();
         const distance = unlockDate - now;
 
-        // Countdown finished
         if (distance <= 0) {
 
             clearInterval(interval);
 
-            timer.textContent = "11:00:00";
+            timer.textContent = "00:00:00";
 
             setTimeout(() => {
                 show("password");
-            }, 2000);
+            }, 1000);
 
             return;
         }
 
         const totalSeconds = Math.floor(distance / 1000);
 
-        const hours = Math.floor(totalSeconds / 3600);
+        const days = Math.floor(totalSeconds / 86400);
+        const hours = Math.floor((totalSeconds % 86400) / 3600);
         const minutes = Math.floor((totalSeconds % 3600) / 60);
         const seconds = totalSeconds % 60;
 
         timer.textContent =
+            String(days).padStart(2, "0") + ":" +
             String(hours).padStart(2, "0") + ":" +
             String(minutes).padStart(2, "0") + ":" +
             String(seconds).padStart(2, "0");
