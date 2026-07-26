@@ -821,17 +821,14 @@ Never leave this friendship. 😊💙
 <script>
 // Set unlock date and time
 const now = new Date();
+// ============================================================
+// REAL-TIME COUNTDOWN — 10:00 AM TO 10:05 AM
+// ============================================================
 
 const unlockDate = new Date();
 
-unlockDate.setHours(8);
-unlockDate.setMinutes(25);
-unlockDate.setSeconds(0);
-unlockDate.setMilliseconds(0);
-
-if (now >= unlockDate) {
-    unlockDate.setDate(unlockDate.getDate() + 1);
-}
+// Today at 10:05:00 AM
+unlockDate.setHours(10, 5, 0, 0);
 
 function startCountdown() {
 
@@ -842,11 +839,12 @@ function startCountdown() {
         const now = new Date();
         const distance = unlockDate - now;
 
+        // Countdown finished
         if (distance <= 0) {
 
             clearInterval(interval);
 
-            timer.innerHTML = "🎉 HAPPY BIRTHDAY ❤️";
+            timer.textContent = "10:05:00";
 
             setTimeout(() => {
                 show("password");
@@ -873,7 +871,6 @@ function startCountdown() {
 }
 
 startCountdown();
-
 /* ============================================================
    SETTINGS
 ============================================================ */
