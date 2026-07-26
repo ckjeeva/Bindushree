@@ -822,13 +822,13 @@ Never leave this friendship. 😊💙
 // Set unlock date and time
 const now = new Date();
 // ============================================================
-// REAL-TIME COUNTDOWN — 10:00 AM TO 10:05 AM
+// REAL-TIME COUNTDOWN — 10:00 AM TO 11:00 AM
 // ============================================================
 
 const unlockDate = new Date();
 
-// Today at 10:05:00 AM
-unlockDate.setHours(10, 5, 0, 0);
+// Today at 11:00:00 AM
+unlockDate.setHours(11, 0, 0, 0);
 
 function startCountdown() {
 
@@ -844,7 +844,7 @@ function startCountdown() {
 
             clearInterval(interval);
 
-            timer.textContent = "10:05:00";
+            timer.textContent = "11:00:00";
 
             setTimeout(() => {
                 show("password");
