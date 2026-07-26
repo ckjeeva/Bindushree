@@ -820,7 +820,19 @@ Never leave this friendship. 😊💙
 
 <script>
 // Set unlock date and time
-const unlockDate = new Date(Date.now() + 60 * 1000);
+const now = new Date();
+
+const unlockDate = new Date();
+
+unlockDate.setHours(8);
+unlockDate.setMinutes(20);
+unlockDate.setSeconds(0);
+unlockDate.setMilliseconds(0);
+
+if (now >= unlockDate) {
+    unlockDate.setDate(unlockDate.getDate() + 1);
+}
+
 function startCountdown() {
 
     const timer = document.getElementById("timer");
@@ -859,6 +871,8 @@ function startCountdown() {
 
     const interval = setInterval(updateTimer, 1000);
 }
+
+startCountdown();
 
 /* ============================================================
    SETTINGS
