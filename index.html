@@ -820,71 +820,7 @@ Never leave this friendship. 😊💙
 
 <script>
     
-// Set unlock date and time
-const now = new Date();
-// ============================================================
-// BIRTHDAY COUNTDOWN
-// Starts from the exact current time
-// Ends exactly on 28 July 2026 at 12:00:00 AM (midnight)
-// ============================================================
 
-const unlockDate = new Date(2026, 6, 28, 0, 0, 0);
-
-function startCountdown() {
-
-    const timer = document.getElementById("timer");
-
-    function updateTimer() {
-
-        const now = new Date();
-        const distance = unlockDate.getTime() - now.getTime();
-
-        // Countdown finished
-        if (distance <= 0) {
-
-            clearInterval(interval);
-
-            timer.textContent = "00:00:00:00";
-
-            setTimeout(() => {
-                show("password");
-            }, 1000);
-
-            return;
-        }
-
-        // Convert milliseconds to total seconds
-        const totalSeconds = Math.floor(distance / 1000);
-
-        const days = Math.floor(totalSeconds / 86400);
-
-        const hours = Math.floor(
-            (totalSeconds % 86400) / 3600
-        );
-
-        const minutes = Math.floor(
-            (totalSeconds % 3600) / 60
-        );
-
-        const seconds = totalSeconds % 60;
-
-        // Display: DD:HH:MM:SS
-        timer.textContent =
-            String(days).padStart(2, "0") + ":" +
-            String(hours).padStart(2, "0") + ":" +
-            String(minutes).padStart(2, "0") + ":" +
-            String(seconds).padStart(2, "0");
-    }
-
-    // Run immediately
-    updateTimer();
-
-    // Update every second
-    const interval = setInterval(updateTimer, 1000);
-}
-
-// Start countdown
-startCountdown();
     
 /* ============================================================
    SETTINGS
