@@ -823,21 +823,36 @@ Never leave this friendship. 😊💙
 // ============================================================
 // BIRTHDAY COUNTDOWN
 // Random unlock time between 1:15 AM and 1:20 AM
-// on 28 July 2026
+// The selected time stays fixed even after refresh
 // ============================================================
 
-// Start: 28 July 2026, 1:15:00 AM
 const startDate = new Date(2026, 6, 28, 1, 15, 0);
-
-// End: 28 July 2026, 1:20:00 AM
 const endDate = new Date(2026, 6, 28, 1, 20, 0);
 
-// Generate ONE random unlock time between 1:15 AM and 1:20 AM
-const randomTime =
-    startDate.getTime() +
-    Math.random() * (endDate.getTime() - startDate.getTime());
+// Check if an unlock time already exists
+let savedUnlockTime = localStorage.getItem("birthdayUnlockTime");
 
-const unlockDate = new Date(randomTime);
+if (!savedUnlockTime) {
+
+    // Generate random time only ONCE
+    const randomTime =
+        startDate.getTime() +
+        Math.random() *
+        (endDate.getTime() - startDate.getTime());
+
+    savedUnlockTime = Math.floor(randomTime);
+
+    // Save it permanently in this browser
+    localStorage.setItem(
+        "birthdayUnlockTime",
+        savedUnlockTime
+    );
+}
+
+const unlockDate = new Date(
+    Number(savedUnlockTime)
+);
+
 
 function startCountdown() {
 
@@ -846,7 +861,9 @@ function startCountdown() {
     function updateTimer() {
 
         const now = new Date();
-        const distance = unlockDate.getTime() - now.getTime();
+
+        const distance =
+            unlockDate.getTime() - now.getTime();
 
         // Countdown finished
         if (distance <= 0) {
@@ -862,22 +879,27 @@ function startCountdown() {
             return;
         }
 
-        // Convert milliseconds to total seconds
-        const totalSeconds = Math.floor(distance / 1000);
+        // Convert milliseconds to seconds
+        const totalSeconds =
+            Math.floor(distance / 1000);
 
-        const days = Math.floor(totalSeconds / 86400);
+        const days =
+            Math.floor(totalSeconds / 86400);
 
-        const hours = Math.floor(
-            (totalSeconds % 86400) / 3600
-        );
+        const hours =
+            Math.floor(
+                (totalSeconds % 86400) / 3600
+            );
 
-        const minutes = Math.floor(
-            (totalSeconds % 3600) / 60
-        );
+        const minutes =
+            Math.floor(
+                (totalSeconds % 3600) / 60
+            );
 
-        const seconds = totalSeconds % 60;
+        const seconds =
+            totalSeconds % 60;
 
-        // Display: DD:HH:MM:SS
+        // Display DD:HH:MM:SS
         timer.textContent =
             String(days).padStart(2, "0") + ":" +
             String(hours).padStart(2, "0") + ":" +
@@ -885,14 +907,12 @@ function startCountdown() {
             String(seconds).padStart(2, "0");
     }
 
-    // Run immediately
     updateTimer();
 
-    // Update every second
-    const interval = setInterval(updateTimer, 1000);
+    const interval =
+        setInterval(updateTimer, 1000);
 }
 
-// Start countdown
 startCountdown();
     
 /* ============================================================
