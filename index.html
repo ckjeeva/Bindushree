@@ -852,65 +852,29 @@ if (!savedUnlockTime) {
 const unlockDate = new Date(
     Number(savedUnlockTime)
 );
-
-
+    
 function startCountdown() {
-
     const timer = document.getElementById("timer");
 
-    function updateTimer() {
+    let remaining = 5;
 
-        const now = new Date();
+    const interval = setInterval(() => {
 
-        const distance =
-            unlockDate.getTime() - now.getTime();
+        timer.textContent = "00:00:00:" + 
+            String(remaining).padStart(2, "0");
 
-        // Countdown finished
-        if (distance <= 0) {
-
+        if (remaining <= 0) {
             clearInterval(interval);
-
-            timer.textContent = "00:00:00:00";
 
             setTimeout(() => {
                 show("password");
-            }, 1000);
+            }, 500);
 
             return;
         }
 
-        // Convert milliseconds to seconds
-        const totalSeconds =
-            Math.floor(distance / 1000);
-
-        const days =
-            Math.floor(totalSeconds / 86400);
-
-        const hours =
-            Math.floor(
-                (totalSeconds % 86400) / 3600
-            );
-
-        const minutes =
-            Math.floor(
-                (totalSeconds % 3600) / 60
-            );
-
-        const seconds =
-            totalSeconds % 60;
-
-        // Display DD:HH:MM:SS
-        timer.textContent =
-            String(days).padStart(2, "0") + ":" +
-            String(hours).padStart(2, "0") + ":" +
-            String(minutes).padStart(2, "0") + ":" +
-            String(seconds).padStart(2, "0");
-    }
-
-    updateTimer();
-
-    const interval =
-        setInterval(updateTimer, 1000);
+        remaining--;
+    }, 1000);
 }
 
 startCountdown();
@@ -928,69 +892,44 @@ const CORRECT_PASSWORD = "PANDA";
    PASSWORD
 ============================================================ */
 
-function checkPassword(){
+function show(screenId) {
+    document.querySelectorAll(".screen").forEach(screen => {
+        screen.classList.remove("active");
+    });
 
+    const screen = document.getElementById(screenId);
+
+    if (screen) {
+        screen.classList.add("active");
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+}
+
+    <script>
+const CORRECT_PASSWORD = "PANDA";
+
+function checkPassword() {
     const input = document.getElementById("passwordInput");
     const error = document.getElementById("error");
 
     const enteredPassword = input.value.trim().toUpperCase();
 
-    if(enteredPassword === CORRECT_PASSWORD){
+    if (enteredPassword === CORRECT_PASSWORD) {
+        error.textContent = "";
+        show("welcome");
 
-        error.textContent = "Unlocked ✨";
-
-        // Start the music immediately after the user clicks Open Surprise.
-        // Because this happens inside the password button click, browsers allow playback.
+        // Start music after user interaction
         const music = document.getElementById("backgroundMusic");
-
-        music.volume = 0.7;
-
-        music.play().catch(error => {
-            console.log("Music could not start:", error);
-        });
-
-        setTimeout(() => {
-            show("welcome");
-        }, 600);
-
-    }else{
-
-        error.textContent = "Wrong password 😄 Try again.";
-
+        music.play().catch(() => {});
+    } else {
+        error.textContent = "❌ Wrong password. Try again!";
         input.value = "";
-        input.focus();
     }
 }
-
-
-// Press Enter to unlock
-document
-    .getElementById("passwordInput")
-    .addEventListener("keydown", function(event){
-
-        if(event.key === "Enter"){
-            checkPassword();
-        }
-
-    });
-
-
-/* ============================================================
-   SCREEN NAVIGATION
-============================================================ */
-
-function show(id){
-
-    document
-        .querySelectorAll(".screen")
-        .forEach(screen => screen.classList.remove("active"));
-
-    document
-        .getElementById(id)
-        .classList.add("active");
-
-    window.scrollTo(0,0);
-}
+</script>
 
 
 /* ============================================================
