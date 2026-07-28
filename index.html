@@ -490,7 +490,7 @@ input:focus,textarea:focus{
 
         <h1 id="timer"
             style="font-size:60px;color:#ffd166;margin:25px 0;">
-            00:01:00
+            00:00:10
         </h1>
 
         <p>Waiting for the special moment... ❤️</p>
@@ -821,59 +821,42 @@ Never leave this friendship. 😊💙
 <script>
     
 // ============================================================
-// BIRTHDAY COUNTDOWN
-// Random unlock time between 1:15 AM and 1:20 AM
-// The selected time stays fixed even after refresh
-// ============================================================
+/* ============================================================
+   10 SECOND COUNTDOWN
+   Starts fresh EVERY TIME the website is opened/refreshed
+============================================================ */
 
-const startDate = new Date(2026, 6, 28, 1, 15, 0);
-const endDate = new Date(2026, 6, 28, 1, 20, 0);
-
-// Check if an unlock time already exists
-let savedUnlockTime = localStorage.getItem("birthdayUnlockTime");
-
-if (!savedUnlockTime) {
-
-    // Generate random time only ONCE
-    const randomTime =
-        startDate.getTime() +
-        Math.random() *
-        (endDate.getTime() - startDate.getTime());
-
-    savedUnlockTime = Math.floor(randomTime);
-
-    // Save it permanently in this browser
-    localStorage.setItem(
-        "birthdayUnlockTime",
-        savedUnlockTime
-    );
-}
-
-const unlockDate = new Date(
-    Number(savedUnlockTime)
-);
-    
 function startCountdown() {
+
     const timer = document.getElementById("timer");
 
-    let remaining = 5;
+    let remaining = 10;
 
-    const interval = setInterval(() => {
+    // Show immediately
+    timer.textContent = "00:00:10";
 
-        timer.textContent = "00:00:00:" + 
-            String(remaining).padStart(2, "0");
+    const interval = setInterval(function () {
+
+        remaining--;
 
         if (remaining <= 0) {
+
             clearInterval(interval);
 
-            setTimeout(() => {
+            timer.textContent = "00:00:00";
+
+            // Open password screen
+            setTimeout(function () {
                 show("password");
             }, 500);
 
             return;
         }
 
-        remaining--;
+        timer.textContent =
+            "00:00:" +
+            String(remaining).padStart(2, "0");
+
     }, 1000);
 }
 
@@ -893,14 +876,17 @@ const CORRECT_PASSWORD = "PANDA";
 ============================================================ */
 
 function show(screenId) {
-    document.querySelectorAll(".screen").forEach(screen => {
+
+    document.querySelectorAll(".screen").forEach(function(screen) {
         screen.classList.remove("active");
     });
 
-    const screen = document.getElementById(screenId);
+    const selectedScreen =
+        document.getElementById(screenId);
 
-    if (screen) {
-        screen.classList.add("active");
+    if (selectedScreen) {
+        selectedScreen.classList.add("active");
+
         window.scrollTo({
             top: 0,
             behavior: "smooth"
