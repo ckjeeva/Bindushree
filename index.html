@@ -1125,10 +1125,8 @@ function nextQuestion(){
     }else{
 
         renderQuestion();
-startCountdown();
 
     }
-
 }
 
 
@@ -1160,37 +1158,64 @@ function buildPhotos(){
 
     grid.innerHTML = "";
 
-    photos.forEach((url,index) => {
+    selectedPhoto = null;
+
+    photos.forEach(function(url, index){
 
         const item = document.createElement("div");
 
         item.className = "photo-option";
 
-        item.innerHTML = `
-            <img src="${url}" alt="Memory ${index + 1}">
-            <span class="photo-number">${index + 1}</span>`;
 
-        item.onclick = () => {
+        // Create number
+        const number = document.createElement("span");
 
-    selectedPhoto = index;
+        number.className = "photo-number";
 
-    document
-        .querySelectorAll(".photo-option")
-        .forEach(photo => photo.classList.remove("selected"));
+        number.textContent = index + 1;
 
-    item.classList.add("selected");
 
-    document.getElementById("photoError").textContent = "";
+        // Create image
+        const image = document.createElement("img");
 
-    // Open the photo in large fullscreen view
-    openPhoto(url);
+        image.src = url;
 
-};
+        image.alt = "Memory " + (index + 1);
+
+
+        // Add number + image
+        item.appendChild(number);
+
+        item.appendChild(image);
+
+
+        // Select photo
+        item.onclick = function(){
+
+            selectedPhoto = index;
+
+            document
+                .querySelectorAll(".photo-option")
+                .forEach(function(photo){
+
+                    photo.classList.remove("selected");
+
+                });
+
+            item.classList.add("selected");
+
+            document
+                .getElementById("photoError")
+                .textContent = "";
+
+            // Open fullscreen photo
+            openPhoto(url);
+        };
+
 
         grid.appendChild(item);
 
     });
-
 }
 
 /* ============================================================
