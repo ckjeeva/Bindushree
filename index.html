@@ -893,29 +893,30 @@ function show(screenId) {
         });
     }
 }
-
-    <script>
-const CORRECT_PASSWORD = "PANDA";
-
 function checkPassword() {
+
     const input = document.getElementById("passwordInput");
     const error = document.getElementById("error");
 
     const enteredPassword = input.value.trim().toUpperCase();
 
     if (enteredPassword === CORRECT_PASSWORD) {
+
         error.textContent = "";
+
         show("welcome");
 
-        // Start music after user interaction
         const music = document.getElementById("backgroundMusic");
         music.play().catch(() => {});
+
     } else {
+
         error.textContent = "❌ Wrong password. Try again!";
         input.value = "";
+        input.focus();
+
     }
 }
-</script>
 
 
 /* ============================================================
@@ -1056,7 +1057,7 @@ function renderQuestion(){
 
         counter.style.margin = "10px 0";
 
-        counter.textContent = "Minimum 35 words required";
+        counter.textContent = "Minimum 20 words required";
 
         area.appendChild(counter);
 
@@ -1475,7 +1476,6 @@ function celebrate(){
    START
 ============================================================ */
 
-startCountdown();
 renderQuestion();
 
 </script>
